@@ -63,7 +63,7 @@ var first_time_load = parseInt((sessionStorage.getItem("first_time")));
 var remove_load_screen = null;
 var remove_welcome_load_screen = null;
 var run_main_page = null;
-console.log(first_time_load);
+// console.log(first_time_load)
 sessionStorage.setItem("last_location", "index");
 if (page_load_type == 1 || isNaN(first_time_load)) {
     load_interval = setInterval(update_loading_screen, 10);

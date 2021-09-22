@@ -89,7 +89,7 @@ let remove_load_screen: TimerType = null;
 let remove_welcome_load_screen: TimerType = null;
 let run_main_page: TimerType = null;
 
-console.log(first_time_load)
+// console.log(first_time_load)
 
 sessionStorage.setItem("last_location", "index");
 

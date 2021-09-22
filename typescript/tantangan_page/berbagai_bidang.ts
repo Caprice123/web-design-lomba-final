@@ -2,7 +2,7 @@ let berbagai_manfaat: NodeListOf<HTMLElement> = document.querySelectorAll(".cont
 let image_berbagai_manfaat: NodeListOf<HTMLElement> = document.querySelectorAll(".image")
 let topics: NodeListOf<HTMLElement> = document.querySelectorAll(".topic")
 
-console.log(image_berbagai_manfaat)
+// console.log(image_berbagai_manfaat)
 const is_fully_visible_berbagai_manfaat = (element: HTMLElement): boolean => {
     let rect            : DOMRect   = element.getBoundingClientRect();
     let top_distance    : number    = rect.top;

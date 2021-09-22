@@ -419,7 +419,7 @@ section.content {
 
 .referensi .container ul {
   position: absolute;
-  top: -300%;
+  top: -350%;
   left: 50%;
   transform: translate(-50%, -50%);
   transform: translateX(-50%);
@@ -446,7 +446,7 @@ section.content {
     top: 100%;
   }
   100% {
-    top: -300%;
+    top: -350%;
   }
 }
 /*# sourceMappingURL=referensi_main.css.map */

@@ -2,7 +2,7 @@ let loading_section: Element = document.querySelector("section.loading") as HTML
 
 const loading_part = (): void => {
     if (load_type != 1 && first_time){
-        console.log("removing")
+        // console.log("removing")
         loading_section.classList.add("remove");
     }
     sessionStorage.setItem("first_time", "1");
@@ -69,7 +69,7 @@ const loading_part = (): void => {
 
 let load_type: number = performance.navigation.type
 let first_time: number = parseInt((sessionStorage.getItem("first_time")))
-console.log(load_type, first_time)
+// console.log(load_type, first_time)
 if (load_type == 1 || isNaN(first_time)){
     loading_section.classList.remove("remove");
     (loading_section as HTMLElement).style.zIndex = "-1";

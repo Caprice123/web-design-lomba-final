@@ -1,7 +1,7 @@
 var berbagai_manfaat = document.querySelectorAll(".content-berbagai-manfaat");
 var image_berbagai_manfaat = document.querySelectorAll(".image");
 var topics = document.querySelectorAll(".topic");
-console.log(image_berbagai_manfaat);
+// console.log(image_berbagai_manfaat)
 var is_fully_visible_berbagai_manfaat = function (element) {
     var rect = element.getBoundingClientRect();
     var top_distance = rect.top;
