@@ -3,6 +3,7 @@ var contentNumber = document.querySelectorAll(".main-content").length;
 var main_page_content = document.querySelectorAll(".main-page-content");
 var main_page_content_number = main_page_content.length;
 var position_x_saved = parseInt(sessionStorage.getItem("positionX"));
+var learn_mores = document.querySelectorAll(".dest");
 // scroll page based on the last saved position gallery
 var scroll_position = position_x_saved ? position_x_saved : 0;
 var move_page = function () {
@@ -23,10 +24,12 @@ var update_scroll_position = function (destination) {
 var filter_current_gallery = function () {
     // update gallery based on scroll position
     main_page_content.forEach(function (mpc) { return mpc.classList.remove("active"); });
+    learn_mores.forEach(function (lm) { return lm.classList.add("unavailable"); });
     // get which part is active
     if (scroll_position - 40 >= 0) {
         var div_active_index = Math.floor((scroll_position - 40) / 100);
         main_page_content[div_active_index].classList.add("active");
+        learn_mores[div_active_index].classList.remove("unavailable");
     }
     var welcome_part_section = document.querySelector(".welcome-part");
     var scroll_command_section = document.querySelector(".scroll-command");
@@ -105,7 +108,7 @@ var loading_div = document.querySelector(".loading-close");
 var close_div = document.querySelector(".close");
 btns.forEach(function (btn) { return btn.addEventListener("click", function () {
     // cover page with close div
-    if (loading_div) {
+    if (loading_div && btn.classList.contains("unavailable") == false) {
         loading_div.classList.remove("remove");
         loading_div.classList.add("active");
         loading_div.style.zIndex = "100000";

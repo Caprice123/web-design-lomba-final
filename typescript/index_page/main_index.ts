@@ -5,7 +5,7 @@ let contentNumber: number = document.querySelectorAll(".main-content").length;
 let main_page_content: NodeListOf<Element> = document.querySelectorAll(".main-page-content");
 let main_page_content_number: number = main_page_content.length;
 let position_x_saved: number = parseInt(sessionStorage.getItem("positionX") as string);
-
+let learn_mores: NodeListOf<HTMLElement> = document.querySelectorAll(".dest")
 
 
 // scroll page based on the last saved position gallery
@@ -34,12 +34,14 @@ const filter_current_gallery = (): void => {
     // update gallery based on scroll position
     
     main_page_content.forEach(mpc => mpc.classList.remove("active"));
+    learn_mores.forEach(lm => lm.classList.add("unavailable"))
 
     // get which part is active
     if (scroll_position - 40 >= 0){
         var div_active_index: number = Math.floor((scroll_position - 40) / 100);
 
         main_page_content[div_active_index].classList.add("active");
+        learn_mores[div_active_index].classList.remove("unavailable")
     }
 
     const welcome_part_section: DivMainType = document.querySelector(".welcome-part");
@@ -141,7 +143,7 @@ btns.forEach(
     btn => btn.addEventListener("click", () => {
         
         // cover page with close div
-        if (loading_div){
+        if (loading_div && btn.classList.contains("unavailable") == false){
             loading_div.classList.remove("remove");
             loading_div.classList.add("active");
             loading_div.style.zIndex = "100000";
