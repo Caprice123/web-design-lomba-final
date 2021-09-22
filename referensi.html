@@ -106,17 +106,6 @@
 
 
 <script>
-    function is_visible(element){
-        let rect                = element.getBoundingClientRect();
-        let top_distance        = rect.top;
-        let bottom_distance     = rect.bottom;
-        let is_visible      
-
-        
-        is_visible = bottom_distance <= window.innerHeight && top_distance <= window.innerHeight;
-        return is_visible;
-    }
-
     const reference_container = document.querySelector(".container")
     const references = reference_container.querySelector("ul")
     const title = document.querySelector(".title")
