@@ -1,6 +1,7 @@
 var loading_section = document.querySelector("section.loading");
 var loading_part = function () {
     if (load_type != 1 || first_time) {
+        console.log("removing");
         loading_section.classList.add("remove");
     }
     sessionStorage.setItem("first_time", "1");

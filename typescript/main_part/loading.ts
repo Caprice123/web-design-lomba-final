@@ -2,6 +2,7 @@ let loading_section: Element = document.querySelector("section.loading") as HTML
 
 const loading_part = (): void => {
     if (load_type != 1 || first_time){
+        console.log("removing")
         loading_section.classList.add("remove");
     }
     sessionStorage.setItem("first_time", "1");
