@@ -14,14 +14,12 @@
         width: 25%;
     }
 
-    .gif-3{
-        @include positionAbsolute(25%, 100%);
-        width: 25%;
-    }
-
+    
     .gif-2{
-        @extend.gif-3;
-        top: 75%;
+        @extend .gif-4;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%);
     }
     .gif-1{
         @extend .gif-4;
