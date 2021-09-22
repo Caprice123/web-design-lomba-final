@@ -115,11 +115,11 @@
         title.classList.add("active")
         title.querySelector("h1").textContent = "Thank You"
         setTimeout(() => {
-            references.classList.remove("active")
+            references.style.animationPlayState = "paused"
             setTimeout(() => {
                 title.querySelector("h1").textContent = "Our References"
                 title.classList.remove("active")
-                references.classList.add("active")
+                references.style.animationPlayState = "running"
             }, 100);
         }, 10000);
     })

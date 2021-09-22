@@ -425,11 +425,7 @@ section.content {
   transform: translateX(-50%);
   width: 75%;
   margin: 5% 0;
-  animation: none;
-}
-
-.referensi .container ul.active {
-  animation: slide_references 25s linear;
+  animation: slide_references 25s linear infinite;
 }
 
 .referensi .container ul li {

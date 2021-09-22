@@ -47,10 +47,8 @@
             transform: translateX(-50%);
             width: 75%;
             margin: 5% 0;
-            animation: none;
-            &.active{
-                animation: slide_references 25s linear;
-            }
+            animation: slide_references 25s linear infinite;
+            
             li{
                 text-align: center;
                 color: #fff;
