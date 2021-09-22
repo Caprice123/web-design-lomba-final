@@ -1,12 +1,13 @@
 var loading_section = document.querySelector("section.loading");
 var loading_part = function () {
-    if (load_type != 1 || first_time) {
+    if (load_type != 1 && first_time) {
         console.log("removing");
         loading_section.classList.add("remove");
     }
     sessionStorage.setItem("first_time", "1");
     var move_page = function (destination) {
         if (loading_section.classList.contains("active") && destination) {
+            loading_section.removeAttribute("style");
             loading_section.style.zIndex = "10000";
             window.location.href = destination;
         }
@@ -33,6 +34,7 @@ var loading_part = function () {
     var location_now = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
     destinations.forEach(function (destination) { return destination.addEventListener("click", function (e) {
         if (location_now != destination.dataset.location) {
+            loading_section.removeAttribute("style");
             loading_section.style.zIndex = "10000";
             loading_section.classList.add("active");
             close_div.addEventListener("animationend", function (e) {
@@ -60,4 +62,5 @@ var first_time = parseInt((sessionStorage.getItem("first_time")));
 console.log(load_type, first_time);
 if (load_type == 1 || isNaN(first_time)) {
     loading_section.classList.remove("remove");
+    loading_section.style.zIndex = "-1";
 }
