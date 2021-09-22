@@ -1,20 +1,6 @@
+let loading_section: Element = document.querySelector("section.loading") as HTMLElement;
+
 const loading_part = (): void => {
-    let loading_section: Element = document.querySelector("section.loading") as HTMLElement;
-
-
-
-    let load_type: number = performance.navigation.type
-    let first_time: number = parseInt((sessionStorage.getItem("first_time")))
-
-    if (load_type == 1 || isNaN(first_time)){
-        loading_section.classList.add("remove");
-    }
-    else{
-        loading_section.classList.remove("remove");
-    }
-
-
-
     sessionStorage.setItem("first_time", "1");
     const move_page = (destination: string): void => {
         if (loading_section.classList.contains("active") && destination){
@@ -74,4 +60,14 @@ const loading_part = (): void => {
             move_page((next_page as HTMLElement).dataset.location)
         });
     })
+}
+
+let load_type: number = performance.navigation.type
+let first_time: number = parseInt((sessionStorage.getItem("first_time")))
+console.log(load_type, first_time)
+if (load_type == 1 || isNaN(first_time)){
+    loading_section.classList.remove("remove");
+}
+else{
+    loading_section.classList.add("remove");
 }

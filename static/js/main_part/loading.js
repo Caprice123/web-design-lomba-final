@@ -1,13 +1,5 @@
+var loading_section = document.querySelector("section.loading");
 var loading_part = function () {
-    var loading_section = document.querySelector("section.loading");
-    var load_type = performance.navigation.type;
-    var first_time = parseInt((sessionStorage.getItem("first_time")));
-    if (load_type == 1 || isNaN(first_time)) {
-        loading_section.classList.add("remove");
-    }
-    else {
-        loading_section.classList.remove("remove");
-    }
     sessionStorage.setItem("first_time", "1");
     var move_page = function (destination) {
         if (loading_section.classList.contains("active") && destination) {
@@ -59,3 +51,12 @@ var loading_part = function () {
         });
     });
 };
+var load_type = performance.navigation.type;
+var first_time = parseInt((sessionStorage.getItem("first_time")));
+console.log(load_type, first_time);
+if (load_type == 1 || isNaN(first_time)) {
+    loading_section.classList.remove("remove");
+}
+else {
+    loading_section.classList.add("remove");
+}
