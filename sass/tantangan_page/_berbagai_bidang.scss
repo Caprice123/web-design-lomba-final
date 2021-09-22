@@ -1,0 +1,155 @@
+.berbagai-bidang{
+    position: relative;
+    height: 200vh;
+    overflow: hidden;
+    background: rgb(71,71,71);
+    background: linear-gradient(180deg, rgba(71,71,71,1) 0%, rgba(20,20,20,1) 35%, rgba(20,20,20,1) 65%, rgba(71,71,71,1) 100%);
+    .right{
+        @include positionAbsolute(2.5%, 100%);
+        transform: translateX(-50%);
+        width: 37.5%;
+        
+        z-index: 5;
+        animation: rotatewheel 5s linear infinite;
+    }
+    .left{
+        width: 25%;
+        @include positionAbsolute(50%, 0);
+        transform: translateX(-50%);
+        z-index: 5;
+        animation: rotatewheel 5s linear infinite;
+    }
+    .glob{
+        @include positionAbsolute(100%, 97.5%);
+        transform: translate(-50%, -50%);
+        width: 25%;
+        z-index: 100;
+    }
+    .arrows{
+        @include positionAbsolute(5%, 0);
+        transform: translateX(-15%);
+        width: 25%;
+        height: 5%;
+        .arrow{
+            @include positionZero;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(to right, rgba(77,77,77, 0.1), rgba(23, 177, 205, 0.875) 25%);
+            clip-path: polygon( calc(15%  + 25% * var(--i)) 0%, 
+                                calc(25%    + 25% * var(--i)) 50%, 
+                                calc(15%  + 25% * var(--i)) 100%, 
+                                calc(0%     + 25% * var(--i)) 100%, 
+                                calc(10%   + 25% * var(--i)) 50%, 
+                                calc(0%     + 25% * var(--i)) 0%);
+            
+        }
+    }
+    .title{
+        @include positionAbsolute(5%, 25%);
+        transform: none;
+        height: 5%;
+        h1{
+            font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+            text-align: center;
+            font-weight: 800;
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(226, 255, 252);
+            text-shadow:    2.5px 2.5px 2px rgba(255, 255, 255, 0.25),
+                                    5px 5px 2px rgba(255, 255, 255, 0.25);
+        }
+    }
+    .content{
+        @include positionAbsolute(15%, 10%);
+        transform: none;
+        
+        width: 90%;
+        height: 85%;
+        @include flexbox(space-evenly, column);
+        .content-berbagai-manfaat{
+            width: 100%;
+            height: 15%;
+            background-color: rgba(47, 106, 102, 0.5);
+            z-index: 10;
+            position: relative;
+            
+            &::before, &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                bottom: 0;
+                background-color: rgba(0,0,0,1);
+                z-index: 100;
+                
+                transition: 0.5s;
+                
+            }
+            &::after{
+                background-color: rgba(0,0,0,0.5);
+                z-index: 10;
+            }
+            &.active{
+                &::before{
+                    height: 0;
+                    
+                }
+                &::after{
+                    height: 0;
+                    transition-delay: 0.5s;
+                    
+                }
+            }
+            h1{
+                @include positionAbsolute(80%,0);
+                width: 200px;
+                color: rgb(226, 255, 252);
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: clamp(0.75rem, 1.75vw, 1.75rem);
+                font-weight: 900;
+                opacity: 0;
+                transition: 0.5s;
+                font-family: 'Open Sans', sans-serif;
+                &.active{
+                    opacity: 1;
+                    transition-delay: 0.5s;
+                }
+            }
+            .image{
+                @include positionAbsolute(0,0);
+                transform: translate(-50%, -25%);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: white;
+                @include centerThings;
+                opacity: 0;
+                transition: 0.5s;
+                &.active{
+                    opacity: 1;
+                    transition-delay: 0.5s;
+                }
+                img{
+                    @include positionCenter;
+                    width: 62.5%;
+                }
+            }
+            .text{
+                padding: 0 5% 0 15%;
+                width: 100%;
+                height: 100%;
+                
+                @include flexbox(space-evenly, column);
+                p{
+                    font-size: clamp(0.6rem, 1.5vw, 1.25rem);
+                    font-weight: 800;
+                    font-family: 'Open Sans', sans-serif;
+                    color: rgb(226, 255, 252);
+                    text-shadow:    1.25px 1.25px 2px rgba(255, 255, 255, 0.25),
+                                        2.5px 2.5px 2px rgba(255, 255, 255, 0.25);
+                }
+            }
+        }
+    }
+}

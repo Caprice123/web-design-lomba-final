@@ -1,0 +1,41 @@
+@keyframes translateHead {
+    0%{
+        transform: translate(-50%, -50%);
+    }
+    50%{
+        transform: translate(-50%, -60%);
+    }
+    100%{
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes moveFooter {
+    0%{
+        left: 50%;
+        transform: translateX(-50%) skew(-45deg);
+        
+    } 
+    49%{
+        left: 0%;
+        transform: translateX(-120%) skew(-45deg);
+        opacity: 1;
+    }
+    49.1%{
+        opacity: 0;
+    }
+    
+    50%{
+        left: 100%;
+        transform: translateX(100%) skew(-45deg);
+        opacity: 0;
+    }
+    50.1%{
+        opacity: 1;
+    }
+    100%{
+        left: 50%;
+        transform: translateX(-50%) skew(-45deg);
+        
+    }
+}

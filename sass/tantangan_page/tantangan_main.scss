@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+@import "../utils/variables";
+@import "../utils/mixin";
+@import "../utils/methods";
+
+@import "../utils/reset";
+@import "../utils/standar_class";
+
+@import "../main_part/animation/animation_header";
+@import "../main_part/animation/animation_loading";
+@import "../main_part/animation/animation_ripple";
+@import "../main_part/animation/animation_wheel";
+
+@import "../main_part/header/header";
+@import "../main_part/loading/loading";
+@import "../main_part/ripple_effect/ripple";
+@import "../main_part/page_selector/page_selector";
+
+
+@import "./purpose";
+@import "./perkembangan";
+@import "./berbagai_bidang";
+@import "./positif_negatif";
+@import "./tantangan";

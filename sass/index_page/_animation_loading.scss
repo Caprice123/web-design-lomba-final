@@ -1,0 +1,35 @@
+@keyframes rotateCenter {
+    0%{
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotateY(360deg);
+    }
+}
+@keyframes rotateLoading {
+    0%{
+        transform: translate(-50%, -50%) rotate(calc(var(--a) * 120deg)) rotateY(0deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(calc(var(--a) * 120deg + 360deg)) rotateY(360deg);
+    }
+}
+@keyframes load_span_load {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    
+    }
+}
+
+@keyframes remove_span_load {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+        z-index: -1;
+    }
+}

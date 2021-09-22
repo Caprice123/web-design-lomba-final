@@ -1,0 +1,117 @@
+/* HEIGHT CONFIGURATION */
+.quarter-screen-height{
+    height          : 25vh;
+}
+
+.half-screen-height{
+    height          : 50vh;
+}
+
+.threequarter-screen-height{
+    height          : 75vh;
+}
+
+.full-screen-height{
+    height          : 100vh;
+}
+
+.quarter-height{
+    height          : 25%;
+}
+
+.half-height{
+    height          : 50%;
+}
+
+.threequarter-height{
+    height          : 75%;
+}
+
+.full-height{
+    height          : 100%;
+}
+
+/* WIDTH CONFIGURATION */
+
+.quarter-width{
+    width           : 25%;
+}
+
+.half-width{
+    width           : 50%;
+}
+
+.threequarter-width{
+    width           : 75%;
+}
+
+.full-width{
+    width           : 100%;
+}
+
+.quarter-screen-width{
+    width           : 25vw;
+}
+
+.half-screen-width{
+    width           : 50vw;
+}
+
+.threequarter-screen-width{
+    width           : 75vw;
+}
+
+.full-screen-width{
+    width           : 100vw;
+}
+/* BACKGROUND CONFIGURATION */
+
+.bg-white{
+    background-color: getColor(white-color);
+}
+
+.bg-light-green{
+    background-color: getColor(light-green);
+}
+
+.bg-light-blue{
+    background-color: getColor(light-blue);
+}
+
+.bg-dark-blue{
+    background-color: getColor(dark-blue);
+}
+
+.bg-grey-color{
+    background-color: getColor(grey-color);
+}
+
+.bg-dark-green{
+    background-color: getColor(dark-green);
+}
+
+.bg-black{
+    background-color: getColor(black-color);
+    color: white;
+}
+
+.bg-cream{
+    background-color: getColor(cream-color);
+}
+
+.bg-brown{
+    background-color: getColor(brown-color);
+    color: white;
+}
+
+
+.hide{
+    display: none;
+}
+
+.not-visible{
+    opacity: 0;
+}
+.visible{
+    opacity: 1;
+}

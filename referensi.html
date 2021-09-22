@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referensi</title>
+    <link rel="stylesheet" href="./static/css/referensi_main.css">
+
+</head>
+<body>
+    <section class="loading remove">
+        <div class="close" style="--i: 5;"></div>
+        <div class="close" style="--i: 4;"></div>
+        <div class="close" style="--i: 3;"></div>
+        <div class="close" style="--i: 2;"></div>
+        <div class="close" style="--i: 1;"></div>
+    </section>
+    <section class="content">
+        <div class="header">
+            <div class="logo">
+                <h1 class="home">i-med</h1>
+            </div>
+            <div class="navigation-bar">
+                <p class="navigation-destination" data-location="index.html">Home</p>
+                <p class="navigation-destination" data-location="pengertian.html">Pengertian</p>
+                <p class="navigation-destination" data-location="pengaruh.html">Pengaruh</p>
+                <p class="navigation-destination" data-location="persiapan.html">Persiapan</p>
+                <p class="navigation-destination" data-location="about_us.html">About Us</p>
+                <p class="navigation-destination" data-location="referensi.html">Referensi</p>
+            </div>
+        </div>
+        <div class="referensi full-width">
+            <div class="title">
+                <h1>Our Reference</h1>
+            </div>
+            <div class="container">
+                <ul class="active">
+                    <li>
+                        A., 2021. Era Digital: Pengertian, Dampak & 3 Manfaatnya. [Online] 
+                        Available at: https://www.apridesain.id/blog/era-digital/
+                        [Accessed 29 August 2021].
+                        </li>
+                    <li>
+                        INDONESIA INVESTMENT COORDINATING BOARD, 2017. 5 Tantangan Digital Ekonomi di Indonesia. [Online] 
+                        Available at: https://www.investindonesia.go.id/id/artikel-investasi/detail/5-tantangan-digital-ekonomi-di-indonesia
+                        [Accessed 29 August 2021].
+                    </li>
+                    <li>
+                        Volt, 2020. HOW TO PREPARE FOR THE FUTURE OF WORK IN A DIGITAL ERA. [Online] 
+                        Available at: https://www.voltinternational.com/blog/2021/03/how-to-prepare-for-the-future-of-work-in-the-new-digital-era
+                    </li>
+                    <li>
+                        Baenanda, L., 2019. Mengenal Lebih Jauh Revolusi Industri 4.0. [Online] 
+                        Available at: https://binus.ac.id/knowledge/2019/05/mengenal-lebih-jauh-revolusi-industri-4-0/
+                        [Accessed 18 September 2021].                        
+                    </li>
+                    <li>
+                        Baenanda, L., 2019. Sejarah dan Perkembangan Revolusi Industri. [Online] 
+                        Available at: https://binus.ac.id/knowledge/2019/05/sejarah-dan-perkembangan-revolusi-industri/
+                        [Accessed 18 September 2021].
+                    </li>
+                    <li>
+                        BAKTI Kominfo, 2019. Dampak Positif dan Negatif Perkembangan Teknologi Komunikasi di Era Digital. [Online] 
+                        Available at: https://www.baktikominfo.id/en/informasi/pengetahuan/dampak_positif_dannegatif_perkembangan_teknologi_komunikasi_di_era_digital-806
+                        [Accessed 18 September 2021].
+
+                    </li>
+                    <li>
+                        Kementerian Pendidikan dan Kebudayaan Republik Indonesia, 2018. Mendidik Anak di Era Digital. [Online] 
+                        Available at: https://gln.kemdikbud.go.id/glnsite/mendidik-anak-di-era-digital/
+                        [Accessed 18 September 2021].
+                    </li>
+                    <li>
+                        Takari, M. & Tarigan, K., n.d. Budaya dalam Literasi Digital Pada Era Industri 4.0 dan Society 5.0. [Online] 
+                        Available at: http://www.magisterseniusu.com/uploads/1/8/0/0/1800340/takari-kumalo-budaya_dalam_literasi_digital.pdf
+                        [Accessed 18 September 2021].
+                    </li>
+                    <li>
+                        Badan Pusat Statistik, 2019. Statistik Telekomunikasi Indonesia. Jakarta: Badan Pusat Statisktik.
+                    </li>
+                    <li>
+                        
+                        Harmony, 2021. Dampak Revolusi Industri 4.0 bagi Bisnis di Indonesia. [Online] 
+                        Available at: https://www.harmony.co.id/blog/dampak-revolusi-industri-4-0-bagi-bisnis-di-indonesia
+                        [Accessed 18 September 2021].
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-selector full-width">
+            <div class="back-page" data-location="about_us.html">
+                <p>About Us</p>
+            </div>
+            <div class="next-page" data-location="index.html">
+                <p>Home</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="./static/js/main_part/loading.js"></script>
+<script src="./static/js/main_part/ripple.js"></script>
+<script src="./static/js/referensi/loading_screen.js"></script>
+
+
+<script>
+    function is_visible(element){
+        let rect                = element.getBoundingClientRect();
+        let top_distance        = rect.top;
+        let bottom_distance     = rect.bottom;
+        let is_visible      
+
+        
+        is_visible = bottom_distance <= window.innerHeight && top_distance <= window.innerHeight;
+        return is_visible;
+    }
+
+    const reference_container = document.querySelector(".container")
+    const references = reference_container.querySelector("ul")
+    const title = document.querySelector(".title")
+
+
+    references.addEventListener("animationend", e => {
+        title.classList.add("active")
+        title.querySelector("h1").textContent = "Thank You"
+        setTimeout(() => {
+            references.classList.remove("active")
+            setTimeout(() => {
+                title.querySelector("h1").textContent = "Our References"
+                title.classList.remove("active")
+                references.classList.add("active")
+            }, 0);
+        }, 10000);
+    })
+   
+
+
+
+
+</script>
+</html>

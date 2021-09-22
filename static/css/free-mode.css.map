@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,GAAG,eAAe,CAAC;EAClC,0BAA0B,EAAE,QAAQ;EACpC,MAAM,EAAE,MAAM;CACf",
+    "sources": [
+        "../js/libraries/swiper/modules/free-mode/free-mode.scss"
+    ],
+    "names": [],
+    "file": "free-mode.css"
+}

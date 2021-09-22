@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,QAAQ,EAAE,OAAO;CAKlB;;AAND,AAEE,aAFW,CAEX,aAAa,CAAC;EACZ,gBAAgB,EAAE,aAAa;EAC/B,mBAAmB,EAAE,MAAM;CAC5B",
+    "sources": [
+        "../js/libraries/swiper/modules/effect-cards/effect-cards.scss"
+    ],
+    "names": [],
+    "file": "effect-cards.css"
+}

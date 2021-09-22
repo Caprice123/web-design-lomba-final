@@ -1,0 +1,163 @@
+.definition{
+    min-height: 75vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background: linear-gradient(to right,  
+                                rgb(0,0,0) 0%, 
+                                rgb(0,0,0) 100%
+                                );
+    .background-1{
+        @include positionAbsolute(0, 0);
+        width: 50%;
+        height: 100%;
+        transform: none;
+        z-index: 10;
+        filter: brightness(50%);
+    }
+    .circle{
+        @include positionAbsolute(100%, 100%);
+        width: 25%;
+        animation: rotate_wheel 5s linear infinite;
+        // z-index: 1000;
+    }
+    .complement{
+        @include positionAbsolute(5%, 90%);
+        z-index: 1;
+        max-width: 50%;
+        filter: brightness(50%);
+    }
+    .container-text{
+        @include positionAbsolute(0, 50%);
+        transform: none;
+        max-width: 50%;
+        height: 100%;
+        z-index: 10;
+        @include centerThings;
+        .inner-container-text{
+            width: 90%;
+            height: 90%;
+            @include flexbox(space-evenly, column);
+            .title{
+                width: 90%;
+                height: 15%;
+                margin: 0 auto;
+                
+                display: flex;
+                align-items: center;
+                border-bottom: 7.5px solid rgb(93, 201, 204);
+                h1{
+                    position: relative;
+                    z-index: 100;
+                    width: 100%;
+                    text-transform: uppercase;
+                    color: rgb(227, 253, 252);
+                    text-shadow:    0px 0px 20px rgba(237, 250, 249, 0.75),
+                                           0px 0px 40px rgba(237, 250, 249, 0.75);
+                    font-size: clamp(1.5rem, 3.5vw, 3rem);
+                    font-weight: 500;
+                    font-family: 'Oswald', sans-serif;
+
+                }
+            }
+            .content-text{
+                width: 90%;
+                height: 80%;
+                @include centerThings(column);
+                margin: 0 auto;
+                p{
+                    font-size: clamp(1rem, 1.75vw, 1.5rem);
+                    padding: 5% 7.5% 5% 0;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@include media-lg{
+    .definition{
+        .container-text{
+            .inner-container-text{
+                .title{
+                    h1{
+                        
+                        font-size: 1.75rem;
+                    }
+                }
+                .content-text{
+                    p{
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-md{
+    .definition{
+        height: 67.5vh;
+        .background-1{
+            @include positionAbsolute(0, 0%);
+            width: 100%;
+            height: 100%;
+            transform: none;
+            z-index: 10;
+        }
+        .container-text{
+            @include positionAbsolute(0, 0);
+            transform: none;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            @include centerThings;
+            background-color: rgba(255, 255, 255, 0.75);
+            .inner-container-text{
+                width: 100%;
+                .title{
+                    h1{
+                        font-size: 2rem;
+                    }
+                }
+                .content-text{
+                    p{
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@include media-sm{
+    .definition{
+        background-image: url("../images/content page/definition/background image.png");
+        background-size: cover;
+        background-position: center;
+        .background-1{
+            display: none;
+        }
+        .container-text{
+            @include positionAbsolute(0, 0);
+            transform: none;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            @include centerThings;
+            background-color: rgba(255, 255, 255, 0.75);
+            .inner-container-text{
+                width: 100%;
+                .title{
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                }
+                .content-text{
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

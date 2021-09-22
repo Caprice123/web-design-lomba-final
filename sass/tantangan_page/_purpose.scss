@@ -1,0 +1,250 @@
+.manfaat{
+    position: relative;
+    background: rgb(20, 20, 20);
+    background: linear-gradient(180deg, 
+                                rgb(20, 20, 20) 0%, 
+                                rgb(71, 71, 71) 100%
+                                );
+    @include flexbox(space-evenly, column);
+    overflow: hidden;
+    .paint{
+        @include positionAbsolute(0, 0);
+        transform: none;
+        width: 20%;
+    }
+    .title{
+        position: absolute;
+        top: 5%;
+        right: 10%;
+        transform: none;
+        width: 62.5%;
+        height: 25%;
+        @include centerThings;
+        h1{
+            font-size: clamp(1.5rem, 3.5vw, 3rem);
+            text-align: center;
+            font-weight: 800;
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(226, 255, 252);
+            text-shadow:    2.5px 2.5px 2px rgba(255, 255, 255, 0.25),
+                                    5px 5px 2px rgba(255, 255, 255, 0.25);
+        }
+    }
+    .worm{
+        @include positionAbsolute(30%, 97.5%);
+        transform: translateX(-75%);
+        width: 15%;
+    }
+
+    .content-manfaat{
+        @include positionAbsolute(40%, 0%);
+        transform: none;
+        width: 100%;
+        height: 60%;
+        @include flexbox(space-evenly, row);
+        div{
+            width: 30%;
+            height: 100%;
+            @include flexbox(space-evenly, column);
+            img{
+                margin: auto;
+                width: 75%;
+            }
+            p{
+                width: 100%;
+                height: 20%;
+                @include centerThings;
+                text-align: center;
+                padding: 0 5%;
+                font-size: clamp(0.75rem, 2vw, 1.5rem);
+                font-weight: 600;
+                color: rgb(226, 255, 252);
+                text-shadow:    1px 1px 2px rgba(255, 255, 255, 0.25),
+                                    2px 2px 2px rgba(255, 255, 255, 0.25);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @include media-lg{
+    
+//     .manfaat{
+//         height: 150vh;
+//         .title{
+//             h1{
+//                 font-size: 2.25rem;
+//             }
+//         }
+//         .content{
+//             grid-auto-rows: 33%;
+//             .projector{
+//                 grid-column: span 3;
+//                 img{
+//                     left: 35%;
+//                 }
+//                 .projector-text{
+//                     left: 35%;
+//                     .inner-text{
+//                         @include centerThings;
+//                         p{
+//                             font-size: 1.5rem;
+//                         }
+//                     }
+//                 }
+//             }
+//             .projector:nth-child(n+2){
+//                 grid-column: span 3;
+//                 img{
+//                     left: 65%;
+//                 }
+//                 .projector-text{
+//                     width: 75%;
+//                     left: 65%;
+//                 }
+//             }
+//             .projector:nth-child(n+3){
+//                 grid-column: span 6;
+//                 img{
+//                     left: 50%;
+//                 }
+//                 .projector-text{
+//                     width: 37.5%;
+//                     left: 50%;
+//                 }
+//             }
+//             .projector:nth-child(n+4){
+//                 grid-column: span 3;
+//                 img{
+//                     left: 35%;
+//                 }
+//                 .projector-text{
+//                     width: 75%;
+//                     left: 35%;
+//                 }
+//             }
+//             .projector:nth-child(n+5){
+//                 grid-column: span 3;
+//                 img{
+//                     left: 65%;
+//                 }
+//                 .projector-text{
+//                     width: 75%;
+//                     left: 65%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @include media-md{
+//     .manfaat{
+//         height: auto;
+//         .title{
+//             height: 25vh;
+//             h1{
+//                 font-size: 1.75rem;
+//             }
+//         }
+//         .content{
+//             height: 200vh;
+
+//             grid-auto-columns: 100%;
+//             grid-template-columns: initial;
+//             grid-template-rows: repeat(5, 1fr);
+//             grid-gap: 2.5%;
+//             .projector:nth-child(n){
+//                 position: relative;
+//                 grid-column: initial;
+                
+//                 grid-column: span 1;
+//                 img{
+//                     left: 50%;
+//                 }
+//                 .projector-text{
+//                     left: 50%;
+//                     height: 50%;
+//                     width: 50%;
+//                     .inner-text{
+//                         p{
+//                             font-size: 1.25rem;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @include media-sm{
+//     .manfaat{
+//         .title{
+//             h1{
+//                 font-size: 1.5rem;
+//             }
+//         }
+//         .content{
+//             .projector:nth-child(n){
+//                 .projector-text{
+//                     height: 50%;
+//                     width: 75%;
+//                 }
+//             }
+//         }
+//     }
+// }

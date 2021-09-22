@@ -1,0 +1,17 @@
+@keyframes rotateBigShape {
+    0%{
+        transform: translateY(-90%) rotate(0deg);
+    }
+    100%{
+        transform: translateY(-90%) rotate(360deg);
+    }
+}
+
+@keyframes rotateSmallShape {
+    0%{
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="static/css/data_main.css">
+    <link rel="stylesheet" href="./static/js/libraries/swiper/swiper-bundle.css">
+    <title>Data Statistik Era Digital</title>
+</head>
+<body>
+
+    <section class="loading remove">
+        <div class="close" style="--i: 5;"></div>
+        <div class="close" style="--i: 4;"></div>
+        <div class="close" style="--i: 3;"></div>
+        <div class="close" style="--i: 2;"></div>
+        <div class="close" style="--i: 1;"></div>
+    </section>
+    <section class="content">
+        <div class="header">
+            <div class="logo">
+                <h1 class="home">i-med</h1>
+            </div>
+            <div class="navigation-bar">
+                <p class="navigation-destination" data-location="index.html">Home</p>
+                <p class="navigation-destination" data-location="pengertian.html">Pengertian</p>
+                <p class="navigation-destination" data-location="pengaruh.html">Pengaruh</p>
+                <p class="navigation-destination" data-location="persiapan.html">Persiapan</p>
+                <p class="navigation-destination" data-location="about_us.html">About Us</p>
+                <p class="navigation-destination" data-location="referensi.html">Referensi</p>
+            </div>
+        </div>
+
+
+        <div class="statistik">
+            <img src="./static/images/persiapan/aa.png" class="background" alt="background">
+            <img src="./static/images/persiapan/matrix.png" class="matrix" data-value="10"alt="matrix">
+            <div class="title">
+                <h1>Perkembangan Indikator TIK di Indonesia</h1>
+                <h1>( 2015 - 2019 )</h1>
+            </div>
+            <div class="graph-div">
+                <img src="./static/images/persiapan/graph.jpg" class="graph" alt="graph">
+            </div>
+
+            <div class="progress-container">
+                <div class="percent-container">
+                    <div class="progress-1" id="progress-1">
+                        <h1 class="inner progress-1-inner" id="progress-1-inner"></h1>
+                    </div>
+                    <div class="text">
+                        <h1 class="topic">Populasi Indonesia telah mengakses internet</h1>
+                    </div>
+                </div>
+
+                <div class="percent-container">
+                    <div class="progress-2" id="progress-2">
+                        <h1 class="inner progress-2-inner" id="progress-2-inner">
+                        </h1>
+                    </div>
+                    <div class="text">
+                        <h1 class="topic">Rumah yang memiliki minimal satu nomor telepon seluler</h1>
+                    </div>
+                </div>
+
+                <div class="percent-container">
+                    <div class="progress-3" id="progress-3">
+                        <h1 class="inner progress-3-inner" id="progress-3-inner">
+                        </h1>
+                    </div>
+                    <div class="text">
+                        <h1 class="topic">Rumah yang memiliki telfon tetap kabel</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="how-adept full-screen-height full-width">
+            <img src="./static/images/persiapan/matrix2.png" class="matrix-left" alt="matrix">
+            <img src="./static/images/persiapan/matrix2.png" class="matrix-right" alt="matrix">
+            
+            <div class="title">
+                <h1>Apa yang Perlu Dipersiapkan</h1>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./static/images/persiapan/Upskilling.jpg" alt="upskilling" />
+                        <h1>Peningkatan keterampilan</h1>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./static/images/persiapan/online_collaborative.png" alt="online_collaborative" />
+                        <h1>Tempat Kerja Kolaboratif</h1>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./static/images/persiapan/data_management.jpg" alt="data management" />
+                        <h1>Manajemen Data</h1>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./static/images/persiapan/content.jpg" alt="content" />
+                        <h1>Design Digital</h1>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./static/images/persiapan/security.jpg" alt="security" />
+                        <h1>Security Data</h1>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="page-selector full-width">
+            <div class="back-page" data-location="pengaruh.html">
+                <p>Apa Pengaruh Era Digital ? ?</p>
+            </div>
+            <div class="next-page" data-location="about_us.html">
+                <p>About Us</p>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+<script src="./static/js/main_part/loading.js"></script>
+<script src="./static/js/main_part/ripple.js"></script>
+<script src="./static/js/main_part/parallax.js"></script>
+<script src="./static/js/manfaat_page/parallax_matrix.js"></script>
+<script src="./static/js/manfaat_page/loading_screen.js"></script>
+
+
+<script src="./static/js/libraries/progressbar.js/dist/progressbar.js"></script>
+<script src="./static/js/libraries/countup.js/dist/countUp.umd.js"></script>
+<script src="./static/js/libraries/swiper/swiper-bundle.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      loop: true,
+      autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        
+        slideShadows: true,
+        
+      },
+    });
+</script>
+
+<script>
+    function add_progress_bar(id, args){
+            return new ProgressBar.Circle(id, {
+                color: args.color,
+                duration: args.duration,
+                easing: args.easing,
+                strokeWidth: args.strokeWidth,
+                svgStyle: {
+                    display: 'block'
+                }
+            })   
+    }
+
+    function run_background_circle_bar(){
+        var circle2 = add_progress_bar("#progress-1", {color: "rgba(73, 79, 86,1)", duration: 0, easing: "easeOut", strokeWidth: 17.5})
+        circle2.animate(1)
+
+        var circle_seluler_2 = add_progress_bar("#progress-2", {color: "rgba(73, 79, 86, 1)", duration: 0, easing: "easeOut", strokeWidth: 17.5})
+        circle_seluler_2.animate(1)
+
+        var telpon_kabel_2 = add_progress_bar("#progress-3", {color: "rgba(73, 79, 86, 1)", duration: 0, easing: "easeOut", strokeWidth: 17.5})
+        telpon_kabel_2.animate(1)
+    }
+    run_background_circle_bar()
+
+    var visible_yet = 0;
+
+    function is_fully_visible(element){
+        let rect               = element.getBoundingClientRect();
+        let top_distance       = rect.top;
+        let bottom_distance    = rect.bottom;
+        let is_visible      
+
+        
+        is_visible = bottom_distance <= window.innerHeight && top_distance <= window.innerHeight;
+        return is_visible;
+    }
+    function run_main_circle_bar(){
+        const count_up_options = {
+            decimalPlaces: 2,
+            duration: 1,
+            suffix: "%"
+        }
+
+
+        const aksesInternet = 47.69
+        var circle = add_progress_bar("#progress-1", {color: "rgb(108, 229, 232)", duration: 1000, easing: "easeOut", strokeWidth: 17.5})
+        
+        circle.animate(aksesInternet/100)
+        
+        
+        var count_akses_internet = new countUp.CountUp("progress-1-inner", aksesInternet, count_up_options)
+        if (!count_akses_internet.error){
+            count_akses_internet.start()
+            
+        }
+        
+        const seluler = 89.09 
+        var circle_seluler_1 = add_progress_bar("#progress-2", {color: "rgb(108, 229, 232)", duration: 1000, easing: "easeOut", strokeWidth: 17.5})
+        
+        circle_seluler_1.animate(seluler/100)
+       
+        var count_seluler = new countUp.CountUp("progress-2-inner", seluler, count_up_options)
+        if (!count_seluler.error){
+            count_seluler.start()
+        }
+
+
+        const telpontetap = 2.09 
+        var telpon_kabel_1 = add_progress_bar("#progress-3", {color: "rgb(108, 229, 232)", duration: 1000, easing: "easeOut", strokeWidth: 17.5})
+        
+        telpon_kabel_1.animate(telpontetap/100)
+        
+        var count_telpon_tetap = new countUp.CountUp("progress-3-inner", telpontetap, count_up_options)
+        if (!count_telpon_tetap.error){
+            count_telpon_tetap.start()
+        }
+    }
+
+    function update_circle_bar(){
+        let progress_bars = document.querySelectorAll(".percent-container")
+        progress_bars.forEach(
+            progress_bar => {
+                if (is_fully_visible(progress_bar)){
+                    progress_bar.classList.add("active")
+                    if (visible_yet == 0){
+
+                        run_main_circle_bar()
+                    }
+                    visible_yet = 1
+                }
+            }
+        )
+    }
+    window.addEventListener("scroll", update_circle_bar)
+   
+    update_circle_bar();
+</script>
+</html>

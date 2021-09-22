@@ -1,0 +1,696 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /*font-family     : 'Hina Mincho', serif;*/
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  background-color: #ededed;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEIGHT CONFIGURATION */
+.quarter-screen-height {
+  height: 25vh;
+}
+
+.half-screen-height {
+  height: 50vh;
+}
+
+.threequarter-screen-height {
+  height: 75vh;
+}
+
+.full-screen-height {
+  height: 100vh;
+}
+
+.quarter-height {
+  height: 25%;
+}
+
+.half-height {
+  height: 50%;
+}
+
+.threequarter-height {
+  height: 75%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/* WIDTH CONFIGURATION */
+.quarter-width {
+  width: 25%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.threequarter-width {
+  width: 75%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.quarter-screen-width {
+  width: 25vw;
+}
+
+.half-screen-width {
+  width: 50vw;
+}
+
+.threequarter-screen-width {
+  width: 75vw;
+}
+
+.full-screen-width {
+  width: 100vw;
+}
+
+/* BACKGROUND CONFIGURATION */
+.bg-white {
+  background-color: white;
+}
+
+.bg-light-green {
+  background-color: #49c5bd;
+}
+
+.bg-dark-blue {
+  background-color: #345060;
+}
+
+.bg-grey-color {
+  background-color: #ededed;
+}
+
+.bg-dark-green {
+  background-color: #367c79;
+}
+
+.bg-black {
+  color: white;
+}
+
+.bg-brown {
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.not-visible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+@keyframes rotateBigShape {
+  0% {
+    transform: translateY(-90%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-90%) rotate(360deg);
+  }
+}
+
+@keyframes rotateSmallShape {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes remove_span_load {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes load_span_load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(15);
+    opacity: 0.01;
+  }
+}
+
+@keyframes rotate_wheel {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotatewheel {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  background-color: #131313;
+  border-bottom: 5px solid white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.header .logo {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header .logo h1 {
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Archivo Black', sans-serif;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px #f5c070, 0px 0px 20px #f5c070;
+}
+
+.header .navigation-bar {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.header .navigation-bar .navigation-destination {
+  width: 10%;
+  height: 100%;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 900;
+  font-family: 'Archivo Black', sans-serif;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 100000;
+  flex-direction: column;
+  transform: none;
+}
+
+.loading .close {
+  position: relative;
+  height: 20%;
+  background-color: #49c5bd;
+  z-index: 100;
+  width: 100%;
+  animation: remove_span_load 0.5s ease-in-out forwards calc(var(--i) * 0.25s);
+}
+
+.loading.remove {
+  z-index: -1;
+}
+
+.loading.remove .close {
+  width: 0;
+  animation: none;
+}
+
+.loading.active {
+  z-index: 100000;
+}
+
+.loading.active .close {
+  width: 0;
+  animation: load_span_load 0.5s ease-in-out forwards calc(var(--i) * 0.25s);
+}
+
+section.content {
+  position: relative;
+  z-index: 1000;
+}
+
+.ripple {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  position: fixed;
+  border-radius: 50%;
+  z-index: 1000;
+  border: 1px solid #c9d0c8;
+}
+
+.page-selector {
+  height: 25vh;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: relative;
+  z-index: -1;
+}
+
+.page-selector .back-page, .page-selector .next-page {
+  margin: auto;
+  position: relative;
+  border: 5px solid white;
+  width: 25%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: right;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.page-selector .back-page p, .page-selector .next-page p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 0 1%;
+  width: 75%;
+  height: 100%;
+  font-size: clamp(0.75rem, 1vw, 1rem);
+  font-weight: 900;
+  font-family: 'Open sans', sans-serif;
+  color: #e2fffc;
+}
+
+.page-selector .back-page::before, .page-selector .next-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  transform: scaleX(-1);
+  background-image: url("../images/right-arrow.png");
+  background-size: 75% 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.page-selector .back-page:hover, .page-selector .next-page:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.page-selector .next-page {
+  text-align: left;
+  position: relative;
+}
+
+.page-selector .next-page p {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.page-selector .next-page::before {
+  left: initial;
+  right: 0;
+  transform: none;
+}
+
+.statistik {
+  position: relative;
+  height: 200vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background: black;
+  background: linear-gradient(180deg, black 0%, #474747 100%);
+}
+
+.statistik .title {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.statistik .title h1 {
+  position: relative;
+  z-index: 100;
+  width: 75%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #eefffd;
+  text-shadow: 2.5px 2.5px 2px rgba(255, 255, 255, 0.25), 5px 5px 2px rgba(255, 255, 255, 0.25);
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-weight: 900;
+  font-family: 'Oswald', sans-serif;
+  margin: 0 auto;
+}
+
+.statistik .background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.statistik .matrix {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  transform: none;
+  width: 100%;
+  z-index: 10;
+  filter: brightness(137.5%);
+}
+
+.statistik .graph-div {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.statistik .graph-div img {
+  position: relative;
+  width: 42.5%;
+  z-index: 1000;
+}
+
+.statistik .progress-container {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.statistik .progress-container .percent-container {
+  width: 25%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.statistik .progress-container .percent-container .progress-1, .statistik .progress-container .percent-container .progress-2, .statistik .progress-container .percent-container .progress-3 {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.statistik .progress-container .percent-container .progress-1 svg, .statistik .progress-container .percent-container .progress-2 svg, .statistik .progress-container .percent-container .progress-3 svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 225px;
+  height: auto;
+  transition: 0.5s;
+}
+
+.statistik .progress-container .percent-container .progress-1 .inner, .statistik .progress-container .percent-container .progress-2 .inner, .statistik .progress-container .percent-container .progress-3 .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  display: none;
+  z-index: 10;
+  color: #b4c3cb;
+}
+
+.statistik .progress-container .percent-container .text {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.statistik .progress-container .percent-container .text h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0rem;
+  transition: 0.5s;
+  color: #b4c3cb;
+}
+
+.statistik .progress-container .percent-container.active .progress-1 .inner, .statistik .progress-container .percent-container.active .progress-2 .inner, .statistik .progress-container .percent-container.active .progress-3 .inner {
+  display: initial;
+}
+
+.statistik .progress-container .percent-container.active .text h1 {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .statistik .header .center h1 {
+    font-size: 2rem;
+  }
+  .statistik .container-statistik .percent-container .progress-1 .inner, .statistik .container-statistik .percent-container .progress-2 .inner, .statistik .container-statistik .percent-container .progress-3 .inner {
+    font-size: 1.75rem;
+  }
+  .statistik .container-statistik .text h1 {
+    font-size: 1.25rem;
+  }
+  .statistik .footer {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    background-color: #367c79;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .statistik {
+    height: auto;
+  }
+  .statistik .header {
+    height: 25vh;
+  }
+  .statistik .header .center h1 {
+    font-size: 1.5rem;
+  }
+  .statistik .container-statistik {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .statistik .container-statistik .percent-container {
+    width: 75%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .statistik .container-statistik .percent-container .progress-1, .statistik .container-statistik .percent-container .progress-2, .statistik .container-statistik .percent-container .progress-3 {
+    height: 100%;
+  }
+  .statistik .container-statistik .percent-container .progress-1 svg, .statistik .container-statistik .percent-container .progress-2 svg, .statistik .container-statistik .percent-container .progress-3 svg {
+    width: auto;
+    height: 100%;
+  }
+  .statistik .container-statistik .percent-container .progress-1 .inner, .statistik .container-statistik .percent-container .progress-2 .inner, .statistik .container-statistik .percent-container .progress-3 .inner {
+    font-size: 1.5rem;
+  }
+  .statistik .container-statistik .text h1 {
+    font-size: 1.1rem;
+  }
+  .statistik .footer {
+    position: initial;
+    height: 10vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .statistik {
+    height: auto;
+  }
+  .statistik .header {
+    height: 25vh;
+  }
+  .statistik .header .center h1 {
+    font-size: 1.25rem;
+  }
+  .statistik .container-statistik {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .statistik .container-statistik .percent-container {
+    width: 90%;
+  }
+  .statistik .container-statistik .percent-container .progress-1 svg, .statistik .container-statistik .percent-container .progress-2 svg, .statistik .container-statistik .percent-container .progress-3 svg {
+    height: 75%;
+  }
+  .statistik .container-statistik .percent-container .progress-1 .inner, .statistik .container-statistik .percent-container .progress-2 .inner, .statistik .container-statistik .percent-container .progress-3 .inner {
+    font-size: 1.25rem;
+  }
+  .statistik .container-statistik .text h1 {
+    font-size: 1rem;
+  }
+  .statistik .footer {
+    height: 10vh;
+  }
+}
+
+.how-adept {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #474747;
+  background: linear-gradient(180deg, #474747 0%, black 100%);
+}
+
+.how-adept .title {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  z-index: 100;
+}
+
+.how-adept .title h1 {
+  position: relative;
+  z-index: 100;
+  width: 75%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #b4c3cb;
+  text-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.25), 5px 5px 2px rgba(0, 0, 0, 0.25);
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-weight: 900;
+  font-family: 'Oswald', sans-serif;
+}
+
+.how-adept .matrix-left, .how-adept .matrix-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  transform: translateX(-50%) scaleX(-1);
+  height: 100%;
+}
+
+.how-adept .matrix-right {
+  left: 100%;
+  transform: translateX(-50%);
+}
+
+.how-adept .swiper {
+  width: 100%;
+  height: 75%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-adept .swiper-3d .swiper-cube-shadow, .how-adept .swiper-3d .swiper-slide, .how-adept .swiper-3d .swiper-slide-shadow, .how-adept .swiper-3d .swiper-slide-shadow-bottom, .how-adept .swiper-3d .swiper-slide-shadow-left, .how-adept .swiper-3d .swiper-slide-shadow-right, .how-adept .swiper-3d .swiper-slide-shadow-top, .how-adept .swiper-3d .swiper-wrapper {
+  margin: auto 0;
+}
+
+.how-adept .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 450px;
+  height: 270px;
+}
+
+.how-adept .swiper-slide img {
+  width: 100%;
+  height: 90%;
+}
+
+.how-adept .swiper-slide h1 {
+  width: 100%;
+  height: 10%;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+  color: #b4c3cb;
+}
+/*# sourceMappingURL=data_main.css.map */

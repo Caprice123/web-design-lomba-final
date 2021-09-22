@@ -1,0 +1,68 @@
+.how-adept{
+    position: relative;
+    @include centerThings(column);
+    background: rgb(71,71,71);
+    background: linear-gradient(180deg,rgb(71,71,71) 0%, rgb(0, 0, 0) 100%);
+    .title{
+        width: 100%;
+        height: 25%;
+        @include centerThings;
+        z-index: 100;
+        h1{
+            position: relative;
+            z-index: 100;
+            width: 75%;
+            text-align: center;
+            text-transform: uppercase;
+            color: hsl(199, 18%, 75%);
+            text-shadow:    2.5px 2.5px 2px rgba(0,0,0, 0.25),
+                                    5px 5px 2px rgba(0,0,0, 0.25);
+            font-size: clamp(1.5rem, 3.5vw, 3rem);
+            font-weight: 900;
+            font-family: 'Oswald', sans-serif;
+
+        }
+    }
+    .matrix-left{
+        @include positionAbsolute(0,0);
+        transform: translateX(-50%) scaleX(-1);
+        height: 100%;
+    }
+
+    .matrix-right{
+        @extend .matrix-left;
+        left: 100%;
+        transform: translateX(-50%);
+    }
+
+
+    .swiper {
+        width: 100%;
+        height: 75%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-3d .swiper-cube-shadow, .swiper-3d .swiper-slide, .swiper-3d .swiper-slide-shadow, .swiper-3d .swiper-slide-shadow-bottom, .swiper-3d .swiper-slide-shadow-left, .swiper-3d .swiper-slide-shadow-right, .swiper-3d .swiper-slide-shadow-top, .swiper-3d .swiper-wrapper{
+        margin: auto 0;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 450px;
+        height: 270px;
+        img{
+            width: 100%;
+            height: 90%;
+        }
+        h1{
+            width: 100%;
+            height: 10%;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            text-align: center;
+            color: hsl(199, 18%, 75%);
+        }
+    }
+}

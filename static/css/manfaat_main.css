@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /*font-family     : 'Hina Mincho', serif;*/
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  background-color: #ededed;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEIGHT CONFIGURATION */
+.quarter-screen-height {
+  height: 25vh;
+}
+
+.half-screen-height {
+  height: 50vh;
+}
+
+.threequarter-screen-height {
+  height: 75vh;
+}
+
+.full-screen-height {
+  height: 100vh;
+}
+
+.quarter-height {
+  height: 25%;
+}
+
+.half-height {
+  height: 50%;
+}
+
+.threequarter-height {
+  height: 75%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/* WIDTH CONFIGURATION */
+.quarter-width {
+  width: 25%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.threequarter-width {
+  width: 75%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.quarter-screen-width {
+  width: 25vw;
+}
+
+.half-screen-width {
+  width: 50vw;
+}
+
+.threequarter-screen-width {
+  width: 75vw;
+}
+
+.full-screen-width {
+  width: 100vw;
+}
+
+/* BACKGROUND CONFIGURATION */
+.bg-white {
+  background-color: white;
+}
+
+.bg-light-green {
+  background-color: #49c5bd;
+}
+
+.bg-dark-blue {
+  background-color: #345060;
+}
+
+.bg-grey-color {
+  background-color: #ededed;
+}
+
+.bg-dark-green {
+  background-color: #367c79;
+}
+
+.bg-black {
+  color: white;
+}
+
+.bg-brown {
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.not-visible {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+@keyframes remove_span_load {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes load_span_load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  z-index: 100000;
+  flex-direction: column;
+  transform: none;
+}
+
+.loading .close {
+  position: relative;
+  height: 20%;
+  background-color: #49c5bd;
+  z-index: 100;
+  width: 100%;
+  animation: remove_span_load 0.5s ease-in-out forwards calc(var(--i) * 0.25s);
+}
+
+.loading.remove {
+  z-index: 100000;
+}
+
+.loading.remove .close {
+  animation: none;
+}
+
+.loading.active {
+  z-index: 100000;
+}
+
+.loading.active .close {
+  width: 0;
+  animation: load_span_load 0.5s ease-in-out forwards calc(var(--i) * 0.25s);
+}
+
+.header {
+  width: 100%;
+  height: 25vh;
+}
+
+.header .header-text {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  background: #4ac6be;
+}
+
+.header .header-text .big-shape {
+  width: 62.5%;
+  height: 75%;
+  background: #2d3c45;
+  margin: auto 0;
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+}
+
+.header .header-text .big-shape p {
+  font-weight: initial;
+  color: white;
+  font-size: 2.5rem;
+  padding-left: 5%;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 20px #86f9dc, 0px 0px 40px #86f9dc;
+  font-family: 'Archivo Black', sans-serif;
+  cursor: pointer;
+}
+
+.header .header-text .small-shape {
+  width: 15%;
+  height: 75%;
+  margin: auto 0;
+  background: #2d3c45;
+  clip-path: polygon(25% 0%, 50% 50%, 25% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.header .nav-bar {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  background: #4ac6be;
+  justify-content: space-between;
+}
+
+.header .nav-bar .parallels {
+  width: 35%;
+  height: 100%;
+  margin-left: 2.5%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.header .nav-bar .parallels .para {
+  margin: auto 0;
+  width: 12.5%;
+  height: 75%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skew(-45deg);
+}
+
+.header .nav-bar .nav-dest {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.header .nav-bar .nav-dest a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.statistik {
+  position: relative;
+}
+
+.statistik .header {
+  width: 100%;
+  height: 25%;
+  position: relative;
+}
+
+.statistik .header .left, .statistik .header .center, .statistik .header .right {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 50%;
+  margin: auto 0;
+  clip-path: polygon(17.5% 0%, 12.5% 50%, 17.5% 100%, 7.5% 100%, 2.5% 50%, 7.5% 0%);
+  background-color: #49c5bd;
+}
+
+.statistik .header .center {
+  clip-path: polygon(15% 50%, 20% 0%, 80% 0%, 85% 50%, 80% 100%, 20% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.statistik .header .center h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.statistik .header .right {
+  clip-path: polygon(92.5% 0%, 97.5% 50%, 92.5% 100%, 82.5% 100%, 87.5% 50%, 82.5% 0%);
+}
+
+.statistik .container-statistik {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.statistik .container-statistik .percent-container {
+  width: 25%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.statistik .container-statistik .percent-container .progress-1, .statistik .container-statistik .percent-container .progress-2, .statistik .container-statistik .percent-container .progress-3 {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.statistik .container-statistik .percent-container .progress-1 svg, .statistik .container-statistik .percent-container .progress-2 svg, .statistik .container-statistik .percent-container .progress-3 svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.statistik .container-statistik .percent-container .progress-1 .inner, .statistik .container-statistik .percent-container .progress-2 .inner, .statistik .container-statistik .percent-container .progress-3 .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.statistik .container-statistik .text {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.statistik .container-statistik .text h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.statistik .footer {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  bottom: 0;
+  background-color: #367c79;
+}
+
+.statistik .keterangan {
+  position: absolute;
+  top: 90%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(15);
+    opacity: 0.01;
+  }
+}
+
+.ripple {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  position: fixed;
+  border-radius: 50%;
+  z-index: 1000;
+  border: 1px solid #c9d0c8;
+}
+/*# sourceMappingURL=manfaat_main.css.map */

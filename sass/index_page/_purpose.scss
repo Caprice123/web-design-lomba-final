@@ -1,0 +1,156 @@
+.purpose{
+    
+    .inner-container{
+        position: relative;
+        img.background{
+            @include positionAbsolute(0,0);
+            transform: none;
+            width: 100%;
+            height: 100%;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            @include flexbox(space-evenly, column);
+            @include centerThingsMargin;
+            align-items: center;
+            z-index: 10;
+            .title{
+                width: 75%;
+                text-align: center;
+                
+                h1{
+                    font-size: 3rem;
+                    text-transform: uppercase;
+                    text-shadow:    0px 0px 20px hsl(165, 100%, 65%),
+                                    0px 0px 40px hsl(165, 100%, 65%);
+                    color: white;
+                    letter-spacing: 5px;
+        
+                    font-family: 'Archivo Black', sans-serif;
+                }
+            }
+            .manfaat-image{
+                @include flexbox(space-evenly, row);
+                width: 100%;
+                height: 75%;
+                .manfaat-teknologi{
+                    width: 15%;
+                    height: 100%;
+                    @include centerThings;
+                    @include flexbox(space-evenly, column);
+                    .image{
+                        width: 75%;
+                        padding: 17.75% 0;
+                        background-color: white;
+                        border-radius: 50%;
+                        @include centerThings;
+                        img{
+                            width: 50%;
+                        }
+                    }
+                    
+                    h1{
+                        color: white;
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    &.active{
+        .inner-container{
+            filter: none;
+        }
+    }
+    
+}
+
+@include media-lg{
+    .purpose{
+        .inner-container{
+            .container{
+                .title{
+                    width: 90%;
+                    text-align: center;
+                    
+                    h1{
+                        font-size: 1.75rem;
+                    }
+                }
+                .manfaat-image{
+                    .manfaat-teknologi{
+                        
+                        h1{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@include media-md{
+    .purpose{
+        .inner-container{
+            .container{
+                .title{
+                    h1{
+                        font-size: 2rem;
+                    }
+                }
+                .manfaat-image{
+                    .manfaat-teknologi{
+                        
+                        h1{
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@include media-sm{
+    .purpose{
+        height: auto !important;
+        .inner-container{
+            .container{
+                .title{
+                    margin-top: 5vh;
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                }
+                .manfaat-image{
+                    display: flex;
+                    flex-direction: column;
+                    .manfaat-teknologi{
+                        @include flexbox(space-evenly, row);
+                        width: 100%;
+                        height: 15vh;
+                        
+                        .image{
+                            width: 15%;
+                            padding: calc( 15% / 4);
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        h1{
+                            width: 50%;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}

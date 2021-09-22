@@ -1,0 +1,72 @@
+
+.tantangan{
+    position: relative;
+    @include flexbox(space-evenly, column);
+    background: rgb(20, 20, 20);
+    background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);
+    .title{
+        width: 100%;
+        height: 10%;
+        h1{
+            font-size: clamp(1.5rem, 3.5vw, 3rem);
+            text-align: center;
+            font-weight: 800;
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(226, 255, 252);
+            text-shadow:    2.5px 2.5px 2px rgba(255, 255, 255, 0.25),
+                                    5px 5px 2px rgba(255, 255, 255, 0.25);
+        }
+    }
+    .container-content{
+        width: 100%;
+        height: 75%;
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .content{
+            margin: auto;
+            position: relative;
+            width: 400px;
+            height: 250px;
+            transform-style: preserve-3d;
+            animation: animate 20s linear infinite;
+
+            span{
+                @include positionZero;
+                width: 100%;
+                height: 100%;
+                transform-origin: center;
+                transform-style: preserve-3d;
+                backface-visibility:visible;
+                cursor: pointer;
+                transform: rotateY(calc(var(--i) * 72deg)) translateZ(400px);
+                
+                img{
+                    @include positionZero;
+                    width: 100%;
+                    height: 75%;
+                
+                    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, hsla(0, 0%, 0%, 0.2));
+                }
+                h1{
+                    @include positionAbsolute(80%, 0%);
+                    transform: none;
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                }
+            }
+        }
+    }
+    
+}
+
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}

@@ -1,0 +1,152 @@
+.perkembangan{
+    overflow: hidden;
+    position: relative;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg,rgb(0,0,0) 0%, rgb(71,71,71) 100%);
+    .circle{
+        @include positionAbsolute(0, 100%);
+        width: 25%;
+        
+        animation: rotate_wheel 5s linear infinite;
+    }
+    .matrix{
+        @include positionAbsolute(10%, 10%);
+        width: 50%;
+        opacity: 0.75;
+    }
+    .rectangle-1{
+        position: absolute;
+        top: 97.5%;
+        right: 0;
+        background: #fff;
+        width: 50%;
+        height: 1.25%;
+        border-radius: 10px;
+        animation: move_rectangle_1 3s linear infinite;
+    }
+    .rectangle-2{
+        @extend .rectangle-1;
+        top: 92.5%;
+        width: 25%;
+        
+        animation: move_rectangle_2 2s linear infinite;
+    }
+    .content{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 10;
+        @include flexbox(space-evenly, column);
+        .title{
+            position: relative;
+            z-index: 100;
+            width: 100%;
+            height: 25%;
+            @include centerThings;
+            
+            
+            h1{
+                position: relative;
+                z-index: 100;
+                width: 100%;
+                text-transform: uppercase;
+                color: rgb(227, 253, 252);
+                text-shadow:    0px 0px 20px rgba(237, 250, 249, 0.75),
+                                       0px 0px 40px rgba(237, 250, 249, 0.75);
+                font-size: clamp(1.5rem, 3vw, 3rem);
+                text-align: center;
+                font-weight: 900;
+                font-family: 'Oswald', sans-serif;
+            }
+        }
+        .cards-container{
+            width: 100%;
+            height: 75%;
+            @include flexbox(space-evenly, row);
+            .card{
+                margin: auto 0;
+                width: 225px;
+                height: calc(225px * 3 / 2);
+                position: relative;
+                cursor: pointer;
+                
+                .content-container{
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgb(74, 198, 190);
+                    transform-style: preserve-3d;
+                    
+                    border-radius: 25px;
+                    box-shadow: 0 0 10px rgba(255,255,255,0.25),
+                                0 0 20px rgba(255,255,255,0.25);
+                    transition: 0.5s;
+                    
+                    .front{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        @include flexbox(space-evenly, column);
+                        backface-visibility: hidden;
+                        
+                        border-radius: 25px;
+                        img{
+                            position: initial;
+                            transform: none;
+                            width: 62.5%;
+                            margin: 0 auto;
+                            filter: invert(100%);
+                        }
+                        h1{
+                            font-size: clamp(1rem, 2vw, 2rem);
+                            text-transform: uppercase;
+                            margin: 0 auto;
+                            text-align: center;
+                            color: #fff;
+                        }
+                    }
+                    .back{
+                        @extend .front;
+                        background-color: getColor(white-color);
+                        transform: rotateY(180deg);
+                        img{
+                            position: initial;
+                            transform: none;
+                            filter: none;
+                        }
+                        h1{
+                            color: #000;
+                        }
+                    }
+                }
+                    
+                &:hover .content-container{
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+    }
+}
+
+@keyframes move_rectangle_1 {
+    0%{
+        width: 50%;
+    }
+    50%{
+        width: 0;
+    }
+    100%{
+        width: 50%;
+    }
+}
+@keyframes move_rectangle_2 {
+    0%{
+        width: 25%;
+    }
+    50%{
+        width: 0;
+    }
+    100%{
+        width: 25%;
+    }
+}

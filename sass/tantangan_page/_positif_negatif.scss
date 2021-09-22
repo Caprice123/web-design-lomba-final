@@ -1,0 +1,201 @@
+.positif-negatif{
+    position: relative;
+    background: rgb(71,71,71);
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(71,71,71,1) 0%, rgba(20,20,20,1) 100%);
+    .glob{
+        @include positionAbsolute(0%, 97.5%);
+        transform: translate(-50%, -50%);
+        width: 25%;
+        z-index: 100;
+    }
+    .rectangle-1{
+        @include positionAbsolute(2.5%, 0%);
+        transform: none;
+        width: 75%;
+        height: 1.25%;
+        background-color: white;
+        border-radius: 10px;
+        animation: move_long 7.5s linear infinite;
+    }
+    .rectangle-2{
+        @extend .rectangle-1;
+        @include positionAbsolute(7.5%, 0%);
+        transform: none;
+        width: 50%;
+        
+        animation: move_short 5s linear infinite;
+    }
+
+    .square{
+        @include positionAbsolute(25%, 0);
+        transform: translateX(-50%);
+        width: 20%;
+    }
+    .title{
+        @include positionAbsolute(10%, 50%);
+        transform: translateX(-50%);
+        width: 62.5%;
+        h1{
+            font-size: clamp(1.5rem, 3.5vw, 3.5rem);
+            text-align: center;
+            font-weight: 800;
+            font-family: 'Open Sans', sans-serif;
+            color: rgb(226, 255, 252);
+            text-shadow:    2.5px 2.5px 2px rgba(255, 255, 255, 0.25),
+                                    5px 5px 2px rgba(255, 255, 255, 0.25);
+        }
+    }
+    .arrows{
+        @include positionAbsolute(50%, 90%);
+        transform: none;
+        width: 4%;
+        height: 45%;
+        position: relative;
+        .arrow{
+            @include positionZero;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(to bottom, rgba(18, 255, 255, 1), rgba(255, 255, 255, 1) 10%);
+            clip-path: polygon( 
+                                0       calc(10%    + 10% * var(--j)), 
+                                50%     calc(0%      + 10% * var(--j)), 
+                                100%    calc(10%    + 10% * var(--j)), 
+                                87.5%   calc(10%    + 10% * var(--j)), 
+                                50%     calc(2.5%     + 10% * var(--j)), 
+                                12.5%   calc(10%    + 10% * var(--j))
+                                );
+        }
+    }
+    .content-positif-negatif{
+        @include positionAbsolute(35%, 50%);
+        transform: translateX(-50%);
+        width: 800px;
+        height: 400px;
+        background: rgb(48, 127, 122);
+        display: flex;
+        .positif{
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background-color: rgb(93, 201, 204);
+            border: 15px solid white;
+            border-radius: 75px;
+            margin: 0 1px;
+            @include flexbox(space-evenly, column);
+            align-items: center;
+            cursor: pointer;
+            transition: 0.5s;
+            img{
+                width: 50%;
+
+            }
+            h1{
+                text-transform: uppercase;
+                font-size: clamp(1.5rem, 3.5vw, 3rem);
+                text-align: center;
+                font-weight: 800;
+                font-family: 'Open Sans', sans-serif;
+                color: rgb(226, 255, 252);
+                text-shadow:    2.5px 2.5px 2px rgba(255, 255, 255, 0.25),
+                                        5px 5px 2px rgba(255, 255, 255, 0.25);
+                transition: 0.5s;
+            }
+            .text{
+                @include positionAbsolute(0, 0);
+                transform: none;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                ul{
+                    @include positionAbsolute(60%, 0);
+                    transform: translateY(-50%);
+                    width: 100%;
+                    height: 75%;
+                    @include flexbox(space-evenly, column);
+                    li{
+                        opacity: 0; 
+                        margin: 0 auto;
+                        color: rgb(227, 253, 252);
+                        font-size: clamp(0.9rem, 1vw, 1.25rem);
+                        font-weight: 900;
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                }
+            }
+            &.neg-active{
+                
+                width: 25%;
+                h1{
+                    font-size: 0;
+                }
+            }
+            &.active{
+                width: 75%;
+                img{
+                    display: none;
+                }
+                h1{
+                    @include positionAbsolute(10%, 50%);
+                    transform: translateX(-50%);
+                }
+                .text{
+                    opacity: 1;
+                    ul{
+                       
+                        li{
+                            opacity: 1;
+                                               
+                            transition: 0.5s;
+                            transition-delay: calc(var(--i) * 0.25s + 0.5s);  
+                        }
+                    }
+                }
+            }
+            
+        }
+        .negatif{
+            @extend .positif;
+            background-color: rgb(30, 174, 152);
+            &.pos-active{
+                width: 25%;
+                h1{
+                    font-size: 0;
+                }
+            }
+            &:active{
+                width: 75%;
+                img{
+                    display: none;
+                }
+                h1{
+                    @include positionAbsolute(10%, 50%);
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+@keyframes move_long {
+    0%{
+        width: 75%;
+    }
+    50%{
+        width: 0;
+    }
+    100%{
+        width: 75%;
+    }
+}
+@keyframes move_short {
+    0%{
+        width: 50%;
+    }
+    50%{
+        width: 0;
+    }
+    100%{
+        width: 50%;
+    }
+}

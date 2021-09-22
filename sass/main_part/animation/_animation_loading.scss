@@ -1,0 +1,21 @@
+@keyframes remove_span_load {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes load_span_load {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    
+    }
+}
+
+

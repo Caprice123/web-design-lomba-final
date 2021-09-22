@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,YAFQ,AACT,iBAAiB,CAChB,aAAa,CAAC;EACZ,0BAA0B,EAAE,QAAQ;CACrC;;AAJL,AAME,YANU,CAMV,aAAa,CAAC;EACZ,cAAc,EAAE,IAAI;EACpB,mBAAmB,EAAE,OAAO;CAI7B;;AAZH,AASI,YATQ,CAMV,aAAa,CAGX,aAAa,CAAC;EACZ,cAAc,EAAE,IAAI;CACrB;;AAXL,AAcI,YAdQ,CAaV,oBAAoB;AAbtB,YAAY,CAaV,oBAAoB,CAEhB,oBAAoB,CAAC;EACrB,cAAc,EAAE,IAAI;CACrB",
+    "sources": [
+        "../js/libraries/swiper/modules/effect-fade/effect-fade.scss"
+    ],
+    "names": [],
+    "file": "effect-fade.css"
+}

@@ -1,0 +1,113 @@
+.main-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    position: absolute;
+    left: 80%;
+    opacity: 1;
+    z-index: 10;
+    transition: transform 0.5s;
+    .main-page-content{
+        width: 100vw;
+        height: 100vh;
+        flex: none;
+        background-color: transparent;
+        @include centerThings;
+
+        .inner-container{
+            
+            width: 800px;
+            height: 400px;
+            margin: auto;
+            filter: brightness(25%);
+            transition: 0.5s;
+            .container{
+                .text{
+                    button{
+                        user-select: none;
+                        pointer-events: none;
+                    }
+                }
+            }
+            
+        }
+        &.active{
+            .inner-container{
+                
+                transform: scale(1.25);
+                filter: none;
+                .container{
+                    .text{
+                        button{
+                            user-select: initial;
+                            pointer-events: initial;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @include media-lg{
+//     .main-page{
+//         .main-page-content{
+//             .inner-container{
+                
+//                 width: 60%;
+//                 height: 60%;
+                
+                
+//             }
+//             &.active{
+//                 .inner-container{
+                    
+//                     transform: scale(1.25);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@include media-md{
+    .main-page{
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        .main-page-content{
+            width: 100vw;
+            height: 62.5vh;
+    
+            .inner-container{
+                
+                width: 100%;
+                height: 100%;
+                filter: none;
+                .container{
+                    .text{
+                        button{
+                            user-select: initial;
+                            pointer-events: initial;
+                        }
+                    }
+                }
+                
+            }
+            &.active{
+                .inner-container{
+                    transform: none;
+                    filter: none;
+                    .container{
+                        .text{
+                            button{
+                                user-select: initial;
+                                pointer-events: initial;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

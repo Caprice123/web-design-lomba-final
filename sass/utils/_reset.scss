@@ -1,0 +1,15 @@
+
+*{
+    box-sizing      : border-box;
+    padding         : 0;
+    margin          : 0;
+    /*font-family     : 'Hina Mincho', serif;*/
+    font-family     : 'Roboto Mono', monospace;
+    //transition: 0.5s;
+    
+}
+body{
+    background-color: getColor(grey-color);
+    overflow-x: hidden;
+}
+html{scroll-behavior:smooth}

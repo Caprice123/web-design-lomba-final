@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../js/libraries/swiper/modules/hash-navigation/hash-navigation.scss"
+    ],
+    "names": [],
+    "file": "hash-navigation.css"
+}

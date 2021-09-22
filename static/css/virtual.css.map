@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACE,eADa,AAAA,gBAAgB,CAC7B,eAAe,AAAA,OAAO,CAAC;EACrB,OAAO,EAAE,EAAE;EACX,QAAQ,EAAE,QAAQ;EAClB,IAAI,EAAE,CAAC;EACP,GAAG,EAAE,CAAC;EACN,cAAc,EAAE,IAAI;CACrB;;AAPH,AAQE,eARa,AAAA,gBAAgB,AAQ5B,kBAAkB,CAAC,eAAe,AAAA,OAAO,CAAC;EACzC,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,0BAA0B;CAClC;;AAXH,AAYE,eAZa,AAAA,gBAAgB,AAY5B,gBAAgB,CAAC,eAAe,AAAA,OAAO,CAAC;EACvC,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,0BAA0B;CACnC",
+    "sources": [
+        "../js/libraries/swiper/modules/virtual/virtual.scss"
+    ],
+    "names": [],
+    "file": "virtual.css"
+}

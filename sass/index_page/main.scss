@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap');
+
+@import "../utils/variables";
+@import "../utils/mixin";
+@import "../utils/methods";
+
+@import "../utils/reset";
+@import "../utils/standar_class";
+
+
+@import "./loading";
+@import "./animation_loading";
+
+@import "./welcome";
+@import "./animation_welcome";
+
+@import "./main_page";
+
+@import "./gallery_pengertian";
+@import "./gallery_pengaruh";
+@import "./gallery_persiapan";
+@import "./gallery_about_us";
+@import "./gallery_referensi";
+
+@import "./purpose";
+

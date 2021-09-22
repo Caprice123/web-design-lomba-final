@@ -1,0 +1,9 @@
+.ripple{
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 1000;
+    border: 1px solid hsl(113, 8%, 80%);
+}

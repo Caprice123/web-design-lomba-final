@@ -1,0 +1,80 @@
+@mixin centerThings($direction: row){
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+
+@mixin flexbox($type, $direction){
+    @include flex;
+    justify-content: $type;
+    flex-direction: $direction;
+}
+
+@mixin flex(){
+    display: flex;
+}
+
+
+@mixin centerThingsMargin($direction: row){
+    @if ($direction == row){
+        margin: 0 auto;
+    }
+    @else if ($direction == all){
+        margin: auto;
+    }
+    @else{
+        margin: auto 0;
+    }
+}
+
+@mixin positionCenter(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin positionFixed($top, $left){
+    position: fixed;
+    top: $top;
+    left: $left;
+    transform: translate(-50%, -50%);
+}
+
+
+@mixin positionAbsolute($top, $left){
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-50%, -50%);
+}
+
+@mixin positionZero(){
+    position: absolute;
+    inset: 0;
+}
+
+@mixin media-sm{
+    @media screen and (max-width: 576px){
+        @content;
+    }
+}
+@mixin media-md{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin media-lg{
+    @media screen and (max-width: 1024px){
+        @content;
+    }
+}
+
+@mixin media-xl{
+    @media screen and (max-width: 1600px) {
+        @content;
+    }
+}
