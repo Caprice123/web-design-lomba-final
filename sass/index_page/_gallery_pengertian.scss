@@ -22,7 +22,7 @@
                 transform: none;
                 
                 h1{
-                    width: 90%;
+                    width: 95%;
                     @include positionAbsolute(37.5%, 50%);
                     color: white;
                     font-size: clamp(1.5rem, 3.5vw, 2.5rem);
