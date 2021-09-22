@@ -36,7 +36,7 @@
                 <h1>Our Reference</h1>
             </div>
             <div class="container">
-                <ul class="active">
+                <ul>
                     <li>
                         A., 2021. Era Digital: Pengertian, Dampak & 3 Manfaatnya. [Online] 
                         Available at: https://www.apridesain.id/blog/era-digital/
@@ -112,15 +112,12 @@
 
 
     references.addEventListener("animationend", e => {
-        title.classList.add("active")
+        references.style.animationPlayState = "paused"
         title.querySelector("h1").textContent = "Thank You"
         setTimeout(() => {
-            references.style.animationPlayState = "paused"
-            setTimeout(() => {
-                title.querySelector("h1").textContent = "Our References"
-                title.classList.remove("active")
-                references.style.animationPlayState = "running"
-            }, 100);
+            title.querySelector("h1").textContent = "Our References"
+            title.classList.remove("active")
+            references.style.animationPlayState = "running"
         }, 10000);
     })
    
